@@ -1,3 +1,26 @@
+export const data = [
+  {
+    id: "1",
+    name: "CategoryID",
+    className: "category-id red BE4B15",
+  },
+  {
+    id: "2",
+    name: "CategoryName",
+    className: "category-Name sky-blue X6EA5F8",
+  },
+  {
+    id: "3",
+    name: "Description",
+    className: "description sky-blue 6EA5F8",
+  },
+  {
+    id: "4",
+    name: "Picture",
+    className: "picture FCC0D0",
+  },
+];
+
 export const schemaDataForAll = [
   {
     title: "Categories",

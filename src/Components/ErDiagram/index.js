@@ -1,29 +1,36 @@
 import React from "react";
 import ReactFlow, { Background, Controls, MiniMap } from "react-flow-renderer";
+import Schema from "../Schema";
+
+// import CustomNode from "./CustomNode";
 
 const defaultNodeOptions = {
   targetPosition: "left",
   sourcePosition: "right",
 };
 
+const nodeTypes = {
+  customNode: Schema,
+};
+
 const nodes = [
   {
-    id: "input",
+    id: "1",
     position: {
       x: 50,
       y: 200,
     },
-    data: {
-      label: "input",
-    },
-    type: "input",
+    // data: {
+    //   label: "input",
+    // },
+    type: "customNode",
     style: {
-      width: 80,
-      backgroundColor: "#0050ff",
-      borderColor: "white",
-      color: "white",
-      fontWeight: "bold",
-      textTransform: "uppercase",
+      // width: 80,
+      // backgroundColor: "#0050ff",
+      // borderColor: "white",
+      // color: "white",
+      // fontWeight: "bold",
+      // textTransform: "uppercase",
     },
     ...defaultNodeOptions,
   },
@@ -165,9 +172,9 @@ const nodes = [
 
 const edges = [
   {
-    id: "e1",
-    source: "input",
-    target: "A",
+    id: "1",
+    source: "output",
+    target: "D",
     type: "smoothstep",
   },
   {
@@ -190,7 +197,7 @@ const edges = [
   },
   {
     id: "e5",
-    source: "input",
+    source: "1",
     target: "D",
     type: "smoothstep",
     animated: true,
@@ -235,6 +242,7 @@ export default function ErDiagram() {
       fitView
       defaultNodes={nodes}
       defaultEdges={edges}
+      nodeTypes={nodeTypes}
     >
       <Background />
       <MiniMap
