@@ -11,10 +11,10 @@ import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
 
 import { BsFillDiamondFill } from "react-icons/bs";
 import { Handle } from "react-flow-renderer";
-import { data as schemaData } from "../../Configs/SchemaData";
+import { schema2 as schemaData } from "../../Configs/SchemaData";
 
 // const Schema = ({ schemaData, title }) => {
-const Schema = () => {
+const Schema2 = () => {
   return (
     <>
       <Handle type="source" position="top" />
@@ -44,7 +44,7 @@ const Schema = () => {
             id="panel1a-header"
           >
             <Typography variant="h6" color={"white"}>
-              {"Categories"}
+              {"Product"}
             </Typography>
           </AccordionSummary>
 
@@ -71,4 +71,4 @@ const Schema = () => {
   );
 };
 
-export default Schema;
+export default Schema2;

@@ -1,3 +1,15 @@
 .react-flow__attribution {
   display: none;
 }
+
+.ReactFlowBackGround {
+  background-color: black;
+}
+
+.react-flow__container {
+  height: 100vh !important;
+}
+
+.react-flow {
+  height: 100vh !important;
+}

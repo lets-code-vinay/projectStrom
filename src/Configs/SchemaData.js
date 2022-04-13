@@ -21,6 +21,29 @@ export const data = [
   },
 ];
 
+export const schema2 = [
+  {
+    id: "1",
+    name: "ProductID",
+    className: "product-id red BE4B15",
+  },
+  {
+    id: "2",
+    name: "ProductName",
+    className: "product-Name sky-blue X6EA5F8",
+  },
+  {
+    id: "3",
+    name: "SuplierID",
+    className: "supplier purple X800080",
+  },
+  {
+    id: "4",
+    name: "CategoryID",
+    className: "category X800080",
+  },
+];
+
 export const schemaDataForAll = [
   {
     title: "Categories",

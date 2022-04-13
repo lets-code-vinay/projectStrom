@@ -6,7 +6,7 @@ import ErDiagram from "../../Components/ErDiagram";
 
 const SchemaPage = () => {
   return (
-    <Box height={["80vh", null, null, 580]} className="schemaPage">
+    <Box height={["724px", null, null, 600]} className="schemaPage">
       <ErDiagram />
     </Box>
   );

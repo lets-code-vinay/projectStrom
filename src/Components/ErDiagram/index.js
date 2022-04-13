@@ -1,250 +1,37 @@
 import React from "react";
 import ReactFlow, { Background, Controls, MiniMap } from "react-flow-renderer";
+import {
+  defaultEdgeOptions,
+  edges,
+  elements,
+  nodeColor,
+  nodes,
+  nodeTypes,
+} from "../../Configs/chartData";
 import Schema from "../Schema";
-
-// import CustomNode from "./CustomNode";
-
-const defaultNodeOptions = {
-  targetPosition: "left",
-  sourcePosition: "right",
-};
-
-const nodeTypes = {
-  customNode: Schema,
-};
-
-const nodes = [
-  {
-    id: "1",
-    position: {
-      x: 50,
-      y: 200,
-    },
-    // data: {
-    //   label: "input",
-    // },
-    type: "customNode",
-    style: {
-      // width: 80,
-      // backgroundColor: "#0050ff",
-      // borderColor: "white",
-      // color: "white",
-      // fontWeight: "bold",
-      // textTransform: "uppercase",
-    },
-    ...defaultNodeOptions,
-  },
-  {
-    id: "output",
-    position: {
-      x: 540,
-      y: 200,
-    },
-    data: {
-      label: "output",
-    },
-    type: "output",
-    style: {
-      width: 80,
-      backgroundColor: "#ff2e8b",
-      borderColor: "white",
-      color: "white",
-      fontWeight: "bold",
-      textTransform: "uppercase",
-    },
-    ...defaultNodeOptions,
-  },
-  {
-    id: "A",
-    position: {
-      x: 200,
-      y: 150,
-    },
-    data: {
-      label: "a",
-    },
-    style: {
-      width: 70,
-      backgroundColor: "#7a4be7",
-      borderColor: "white",
-      color: "white",
-      fontWeight: "bold",
-      textTransform: "uppercase",
-    },
-    ...defaultNodeOptions,
-  },
-  {
-    id: "B",
-    position: {
-      x: 300,
-      y: 100,
-    },
-    data: {
-      label: "b",
-    },
-    style: {
-      width: 70,
-      backgroundColor: "#a845d0",
-      borderColor: "white",
-      color: "white",
-      fontWeight: "bold",
-      textTransform: "uppercase",
-    },
-    ...defaultNodeOptions,
-  },
-  {
-    id: "C",
-    position: {
-      x: 400,
-      y: 150,
-    },
-    data: {
-      label: "c",
-    },
-    style: {
-      width: 70,
-      backgroundColor: "#ca3fb9",
-      borderColor: "white",
-      color: "white",
-      fontWeight: "bold",
-      textTransform: "uppercase",
-    },
-    ...defaultNodeOptions,
-  },
-  {
-    id: "D",
-    position: {
-      x: 200,
-      y: 250,
-    },
-    data: {
-      label: "d",
-    },
-    style: {
-      width: 70,
-      backgroundColor: "#7a4be7",
-      borderColor: "white",
-      color: "white",
-      fontWeight: "bold",
-      textTransform: "uppercase",
-    },
-    ...defaultNodeOptions,
-  },
-  {
-    id: "E",
-    position: {
-      x: 300,
-      y: 300,
-    },
-    data: {
-      label: "e",
-    },
-    style: {
-      width: 70,
-      backgroundColor: "#a845d0",
-      borderColor: "white",
-      color: "white",
-      fontWeight: "bold",
-      textTransform: "uppercase",
-    },
-    ...defaultNodeOptions,
-  },
-  {
-    id: "F",
-    position: {
-      x: 400,
-      y: 250,
-    },
-    data: {
-      label: "f",
-    },
-    style: {
-      width: 70,
-      backgroundColor: "#ca3fb9",
-      borderColor: "white",
-      color: "white",
-      fontWeight: "bold",
-      textTransform: "uppercase",
-    },
-    ...defaultNodeOptions,
-  },
-];
-
-const edges = [
-  {
-    id: "1",
-    source: "output",
-    target: "D",
-    type: "smoothstep",
-  },
-  {
-    id: "e2",
-    source: "A",
-    target: "B",
-    type: "smoothstep",
-  },
-  {
-    id: "e3",
-    source: "B",
-    target: "C",
-    type: "smoothstep",
-  },
-  {
-    id: "e4",
-    source: "C",
-    target: "output",
-    type: "smoothstep",
-  },
-  {
-    id: "e5",
-    source: "1",
-    target: "D",
-    type: "smoothstep",
-    animated: true,
-  },
-  {
-    id: "e6",
-    source: "D",
-    target: "E",
-    type: "smoothstep",
-    animated: true,
-  },
-  {
-    id: "e7",
-    source: "E",
-    target: "F",
-    type: "smoothstep",
-    animated: true,
-  },
-  {
-    id: "e8",
-    source: "F",
-    target: "output",
-    type: "smoothstep",
-    animated: true,
-  },
-];
-
-const defaultEdgeOptions = { style: { strokeWidth: 2, stroke: "#BDC4CC" } };
-const nodeColor = ({ id }) =>
-  nodes.find((n) => n.id === id).style.backgroundColor;
-
-console.log("nodes", nodes);
-console.log("edges", edges);
-console.log("defaultEdgeOptions", defaultEdgeOptions);
+import Schema2 from "../Schema/schema2";
 
 export default function ErDiagram() {
+  const nodeTypes = {
+    customNode: Schema,
+    customNode2: Schema2,
+  };
+
   return (
     <ReactFlow
       defaultEdgeOptions={defaultEdgeOptions}
       preventScrolling={false}
-      zoomOnScroll={false}
+      // zoomOnScroll={false}
       fitView
       defaultNodes={nodes}
       defaultEdges={edges}
       nodeTypes={nodeTypes}
     >
-      <Background />
+      <Background
+        variant="dots"
+        color="black"
+        className="ReactFlowBackGround"
+      />
       <MiniMap
         nodeBorderRadius={8}
         nodeStrokeColor="#fff"
