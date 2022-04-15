@@ -97,9 +97,10 @@ export const edges = [
     source: "A",
     target: "B",
     type: "smoothstep",
-    // sourceHandle: "A",
-    animated: true,
+    sourceHandle: "A",
+    // animated: true,
     className: "normal-edge",
+    zIndex: "-99",
   },
 
   /**
@@ -110,7 +111,8 @@ export const edges = [
     source: "B",
     target: "C",
     type: "smoothstep",
-    animated: true,
+    // animated: true,
+    zIndex: "-99",
   },
 
   /**
@@ -122,12 +124,15 @@ export const edges = [
     target: "D",
     type: "smoothstep",
     animated: true,
+    data: { name: "vinay" },
+    zIndex: "-99",
   },
   {
     id: "e4",
     source: "D",
     target: "A",
     type: "smoothstep",
+    zIndex: "-99",
   },
 ];
 
